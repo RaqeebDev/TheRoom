@@ -20,10 +20,16 @@ var gravity = 9.8
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var tasks: Label = $tasks
+
 
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+
+		
+
 
 
 func _unhandled_input(event):
@@ -71,7 +77,16 @@ func _physics_process(delta):
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
+	
+				
+				
+				
+	
 	move_and_slide()
+	
+
+func change(texty):
+	tasks.text = texty
 
 func label():
 	$Label.visible = !$Label.visible

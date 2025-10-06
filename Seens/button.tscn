@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4akfj7e81cjf"]
+
+[ext_resource type="Script" uid="uid://bcy7eu31fflmt" path="res://scripts/button.gd" id="1_ycxth"]
+[ext_resource type="AudioStream" uid="uid://bfsngrahwkpnv" path="res://Assets/Audios/light-switch-156813.mp3" id="2_c62ga"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_phi84"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycxth"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_phi84"]
+material = SubResource("StandardMaterial3D_ycxth")
+
+[node name="button" type="Area3D"]
+transform = Transform3D(0.00117461, 0, -0.166996, 0, 0.167, 0, 0.166996, 0, 0.00117461, 0, 0, 0)
+script = ExtResource("1_ycxth")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(14.2519, 0, 0, 0, 14.2519, 0, 0, 0, 14.2519, 0, 0, 0)
+shape = SubResource("BoxShape3D_phi84")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.19389, 0, 0, 0, 1.69382, 0, 0, 0, 0.281847, 0, 0, 0)
+mesh = SubResource("BoxMesh_phi84")
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_c62ga")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
