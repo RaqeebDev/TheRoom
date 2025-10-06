@@ -1,10 +1,23 @@
-[gd_scene load_steps=35 format=4 uid="uid://tyki7btrncvp"]
+[gd_scene load_steps=37 format=4 uid="uid://tyki7btrncvp"]
 
 [ext_resource type="Texture2D" uid="uid://bj38j3vnqr6tc" path="res://Assets/textures/Wood_08-256x256.png" id="1_fu2nc"]
 [ext_resource type="PackedScene" uid="uid://chih3v5qwsi7q" path="res://Seens/player.tscn" id="2_h1hhx"]
 [ext_resource type="PackedScene" uid="uid://ba5w0mf2hwank" path="res://Seens/tv.tscn" id="3_3oi10"]
 
-[sub_resource type="Environment" id="Environment_h1hhx"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3oi10"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+energy_multiplier = 0.35
+
+[sub_resource type="Sky" id="Sky_by0ap"]
+sky_material = SubResource("ProceduralSkyMaterial_3oi10")
+
+[sub_resource type="Environment" id="Environment_7ti41"]
+background_mode = 2
+sky = SubResource("Sky_by0ap")
+tonemap_mode = 2
+glow_enabled = true
+glow_bloom = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1hhx"]
 albedo_texture = ExtResource("1_fu2nc")
@@ -356,12 +369,18 @@ points = PackedVector3Array(-4.25573, 0.043041, 0.4, -0.0662906, 4.16702, 2.1, 0
 [node name="Main" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_h1hhx")
+environment = SubResource("Environment_7ti41")
 
 [node name="Walls" type="Node3D" parent="."]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.256052, -2.76205)
+use_collision = true
+size = Vector3(10, 0.5, 15.3705)
+material = SubResource("StandardMaterial3D_h1hhx")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.18336, -2.76205)
 use_collision = true
 size = Vector3(10, 0.5, 15.3705)
 material = SubResource("StandardMaterial3D_h1hhx")
@@ -465,7 +484,7 @@ transform = Transform3D(-4.65528e-08, 0, -0.62331, 0, 0.342645, 0, 1.065, 0, -2.
 shape = SubResource("ConvexPolygonShape3D_3oi10")
 
 [node name="player" parent="." instance=ExtResource("2_h1hhx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.147067, 2.23883, -4.83904)
+transform = Transform3D(0.878183, 0, 0, 0, 0.878183, 0, 0, 0, 0.878183, 0.147067, 2.23883, -4.83904)
 
 [node name="Tv" parent="." instance=ExtResource("3_3oi10")]
 transform = Transform3D(0.840727, 0, 0, 0, 0.840727, 0, 0, 0, 0.840727, -1.54938, 1.34521, 1.10863)
