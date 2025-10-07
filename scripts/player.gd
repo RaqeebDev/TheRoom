@@ -21,12 +21,13 @@ var gravity = 9.8
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var tasks: Label = $tasks
+@onready var timer: Timer = $"../Timer"
 
 
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	
+	pass
 
 		
 
@@ -62,6 +63,7 @@ func _physics_process(delta):
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
 		else:
+			$foot.play()
 			velocity.x = lerp(velocity.x, direction.x * speed, delta * 7.0)
 			velocity.z = lerp(velocity.z, direction.z * speed, delta * 7.0)
 	else:
@@ -88,8 +90,19 @@ func _physics_process(delta):
 func change(texty):
 	tasks.text = texty
 
+
+func done():
+	$"../light".visible = false
+	timer.start()
+	
+	
+	
+	
 func label():
 	$Label.visible = !$Label.visible
+	
+func breath():
+	$breath.play()
 	
 	
 	
@@ -98,3 +111,8 @@ func label():
 	#pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	#pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	#return pos
+@onready var main: Node3D = $".."
+func _on_timer_timeout() -> void:
+	$"../light".visible = false
+	main.donemain()
+	

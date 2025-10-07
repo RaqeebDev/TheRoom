@@ -79,11 +79,16 @@ shape = SubResource("BoxShape3D_32gxy")
 
 [node name="ring" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_y4mga")
-volume_db = 28.718
+volume_db = -8.878
 
 [node name="ended" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_tofho")
-volume_db = 80.0
+volume_db = 1.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

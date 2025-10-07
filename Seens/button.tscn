@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4akfj7e81cjf"]
+[gd_scene load_steps=7 format=3 uid="uid://b4akfj7e81cjf"]
 
 [ext_resource type="Script" uid="uid://bcy7eu31fflmt" path="res://scripts/button.gd" id="1_ycxth"]
 [ext_resource type="AudioStream" uid="uid://bfsngrahwkpnv" path="res://Assets/Audios/light-switch-156813.mp3" id="2_c62ga"]
+[ext_resource type="AudioStream" uid="uid://qr1ysbajg5wb" path="res://Assets/Audios/fast-knocking-on-door-352704.mp3" id="3_5vxhh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_phi84"]
 
@@ -25,5 +26,18 @@ mesh = SubResource("BoxMesh_phi84")
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_c62ga")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="knocktimer" type="Timer" parent="."]
+wait_time = 18.0
+one_shot = true
+
+[node name="knock" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5vxhh")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="knocktimer" to="." method="_on_knocktimer_timeout"]

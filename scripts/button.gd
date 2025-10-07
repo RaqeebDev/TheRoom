@@ -2,8 +2,7 @@ extends Area3D
 
 @onready var  player = get_node("/root/Main/player")
 @onready var  light = get_node("/root/Main/light")
-@onready var  phone = get_node("/root/Main/phone")
-
+@onready var  tv = get_node("/root/Main/Tv")
 
 @onready var in_area_button = false
 
@@ -26,9 +25,10 @@ func _input(event: InputEvent) -> void:
 			light.visible = !light.visible
 			audio.play()
 			if texty1 == false:
-				player.change("Pickup the call")
-				phone.playy()
-				texty1 = true
+				player.change("")
+				$Timer.start()
+				
+
 				
 
 
@@ -43,3 +43,16 @@ func _on_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		in_area_button = false
 		player.label()
+
+
+func _on_timer_timeout() -> void:
+	player.change("Turn off the TV")
+	tv.tvused = true
+	tv.playtv()
+	texty1 = true
+	$knocktimer.start
+				
+
+
+func _on_knocktimer_timeout() -> void:
+	$knock.play()

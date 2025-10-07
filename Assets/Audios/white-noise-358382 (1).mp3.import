@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://duitywjdgip4"
+path="res://.godot/imported/white-noise-358382 (1).mp3-d92a3491f222f75ca9c6e81ce535fc5d.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audios/white-noise-358382 (1).mp3"
+dest_files=["res://.godot/imported/white-noise-358382 (1).mp3-d92a3491f222f75ca9c6e81ce535fc5d.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

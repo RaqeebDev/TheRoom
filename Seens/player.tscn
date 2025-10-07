@@ -1,7 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://chih3v5qwsi7q"]
+[gd_scene load_steps=10 format=3 uid="uid://chih3v5qwsi7q"]
 
 [ext_resource type="Script" uid="uid://bfycjf2h10n7" path="res://scripts/player.gd" id="1_qv6uv"]
 [ext_resource type="FontFile" uid="uid://bcnn55oh62f32" path="res://Assets/fonts/VCR_OSD_MONO_1.001.ttf" id="2_nmtxl"]
+[ext_resource type="AudioStream" uid="uid://36ri02sjolg5" path="res://Assets/Audios/footsteps-male-362053.mp3" id="3_qo8y5"]
+[ext_resource type="AudioStream" uid="uid://duitywjdgip4" path="res://Assets/Audios/white-noise-358382 (1).mp3" id="4_7k26w"]
+[ext_resource type="AudioStream" uid="uid://bio0d04pfqsqu" path="res://Assets/Audios/breathing-fast-247449.mp3" id="5_7k26w"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_nmtxl"]
 
@@ -74,3 +77,14 @@ offset_bottom = 34.0
 grow_horizontal = 0
 text = "Switch on the light!"
 uppercase = true
+
+[node name="foot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qo8y5")
+
+[node name="whitenoise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7k26w")
+autoplay = true
+
+[node name="breath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7k26w")
+volume_db = 11.415

@@ -6,6 +6,8 @@ extends Node3D
 @onready var ended: AudioStreamPlayer = $ended
 
 @onready var in_areaphone = false
+@onready var used = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -21,7 +23,11 @@ func _input(event: InputEvent) -> void:
 		ring.stop()
 		ended.play()
 		emmision.visible = false
-		player.done()
+		
+		if used == false:
+			player.change("")	
+			$Timer.start()
+			
 
 func playy():
 	emmision.visible = true
@@ -39,3 +45,8 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	in_areaphone = false
 	player.label()
+
+
+func _on_timer_timeout() -> void:
+	player.done()
+	used = true
