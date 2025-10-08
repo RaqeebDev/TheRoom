@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://tyki7btrncvp"]
+[gd_scene load_steps=60 format=4 uid="uid://tyki7btrncvp"]
 
 [ext_resource type="Script" uid="uid://hq4wgyg3st1t" path="res://scripts/main.gd" id="1_wsaa6"]
 [ext_resource type="Material" uid="uid://ct0sg0auwvcf5" path="res://materials/floorreal.tres" id="2_f5nlp"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bdcl1l32h56d0" path="res://Assets/fonts/coca-cola-can/textures/can_Metal_BaseColor_Utility_-_sRGB_-_Textu.png" id="10_ok1i4"]
 [ext_resource type="PackedScene" uid="uid://efpgg3kr4epf" path="res://materials/fader.tscn" id="11_ok1i4"]
 [ext_resource type="PackedScene" uid="uid://dc2og26ue2q4m" path="res://Assets/Models/oven.tscn" id="12_60rfo"]
+[ext_resource type="PackedScene" uid="uid://bm5s2qlae4apr" path="res://materials/pick.tscn" id="13_rcoig"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3oi10"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -844,6 +845,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_60rfo")
 
 [node name="fader" parent="." instance=ExtResource("11_ok1i4")]
+anchors_preset = 15
 
 [node name="Timer" type="Timer" parent="fader"]
 wait_time = 2.0
@@ -854,6 +856,9 @@ transform = Transform3D(0.79337, 0, 0.148332, 0, 0.807118, 0, -0.148332, 0, 0.79
 [node name="donetimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="pick" parent="." instance=ExtResource("13_rcoig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.81165, 1.00605, 0.559405)
 
 [connection signal="timeout" from="Timer" to="player" method="_on_timer_timeout"]
 [connection signal="timeout" from="fader/Timer" to="." method="_on_timer_timeout"]
