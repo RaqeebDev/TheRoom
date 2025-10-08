@@ -845,7 +845,6 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_60rfo")
 
 [node name="fader" parent="." instance=ExtResource("11_ok1i4")]
-anchors_preset = 15
 
 [node name="Timer" type="Timer" parent="fader"]
 wait_time = 2.0

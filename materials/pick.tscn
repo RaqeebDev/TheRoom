@@ -1,20 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://bm5s2qlae4apr"]
+[gd_scene load_steps=5 format=3 uid="uid://bm5s2qlae4apr"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_7fptk"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7fptk"]
-albedo_color = Color(1, 0, 1, 1)
-emission_enabled = true
-emission = Color(1, 0, 1, 1)
-emission_energy_multiplier = 6.33
+[ext_resource type="Texture2D" uid="uid://cu5755paefkoh" path="res://Assets/Models/coca-cola-can/textures/can_Red_BaseColor_Utility_-_sRGB_-_Texture.png" id="1_0c8md"]
+[ext_resource type="ArrayMesh" uid="uid://e586dasqkaq0" path="res://Assets/Models/coca-cola-can/textures/14025_Soda_Can_v3_l3.obj" id="2_u3kee"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7fptk"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gr4om"]
+albedo_texture = ExtResource("1_0c8md")
+
 [node name="pick" type="RigidBody3D" groups=["pickable"]]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_7fptk")
-surface_material_override/0 = SubResource("StandardMaterial3D_7fptk")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.53967, 0, 0, 0, 0.53967, 0, 0, 0, 0.53967, 0, 0, 0)
 shape = SubResource("BoxShape3D_7fptk")
+
+[node name="can" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0390794, 0, 0, 0, 0.0390794, 0, 0, 0, 0.0390794, 0.0079748, 0.0145229, -0.267243)
+material_override = SubResource("StandardMaterial3D_gr4om")
+mesh = ExtResource("2_u3kee")
