@@ -34,7 +34,6 @@ func _physics_process(delta):
 			light.visible = !light.visible
 			is_changed = false
 			if tvused == true :
-				player.label2show()
 				player.change("")
 				$Timer.start()
 				

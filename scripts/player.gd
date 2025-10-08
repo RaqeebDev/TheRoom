@@ -70,8 +70,9 @@ func _physics_process(delta):
 		if direction:
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
-			$foot.play()
+			
 		else:
+			$foot.play()
 			velocity.x = lerp(velocity.x, 0.0, delta * 7.0)
 			velocity.z = lerp(velocity.z, 0.0, delta * 7.0)
 	else:
@@ -103,8 +104,6 @@ func _on_timer_timeout() -> void:
 	$"../light".visible = false
 	main.donemain()
 
-func label2show():
-	$Label2.show()
 
 #pickup/throw
 func pick_up_object(object: RigidBody3D):
