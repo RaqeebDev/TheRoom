@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://tyki7btrncvp"]
+[gd_scene load_steps=62 format=4 uid="uid://tyki7btrncvp"]
 
 [ext_resource type="Script" uid="uid://hq4wgyg3st1t" path="res://scripts/main.gd" id="1_wsaa6"]
 [ext_resource type="Material" uid="uid://ct0sg0auwvcf5" path="res://materials/floorreal.tres" id="2_f5nlp"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bm5s2qlae4apr" path="res://materials/pick.tscn" id="13_rcoig"]
 [ext_resource type="PackedScene" uid="uid://qobdaormawrg" path="res://Seens/kitchen_cabinet_upper_double.tscn" id="14_jfi8r"]
 [ext_resource type="PackedScene" uid="uid://dsjiwpqcqt8er" path="res://Seens/carpet.tscn" id="16_0103b"]
+[ext_resource type="PackedScene" uid="uid://b0ts4x35f1547" path="res://Seens/plush.tscn" id="17_0103b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3oi10"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -700,7 +701,7 @@ transform = Transform3D(-4.65528e-08, 0, -0.62331, 0, 0.342645, 0, 1.065, 0, -2.
 shape = SubResource("ConvexPolygonShape3D_3oi10")
 
 [node name="player" parent="." instance=ExtResource("2_h1hhx")]
-transform = Transform3D(0.878183, 0, 0, 0, 0.878183, 0, 0, 0, 0.878183, 0.147067, 1.65799, 0.149238)
+transform = Transform3D(0.0951936, 0, -0.873008, 0, 0.878183, 0, 0.873008, 0, 0.0951936, 0.47174, 1.65799, 0.149238)
 
 [node name="Tv" parent="." instance=ExtResource("3_3oi10")]
 transform = Transform3D(0.840727, 0, 0, 0, 0.840727, 0, 0, 0, 0.840727, -2.38115, 1.34521, 0.769881)
@@ -786,6 +787,9 @@ transform = Transform3D(-1.42505e-08, 0, 0.326013, 0, 0.326013, 0, -0.326013, 0,
 
 [node name="carpet" parent="." instance=ExtResource("16_0103b")]
 transform = Transform3D(2.29944, 0, 0, 0, 2.29944, 0, 0, 0, 2.29944, 0.668421, 0.516349, -5.89706)
+
+[node name="sketchfab" parent="." instance=ExtResource("17_0103b")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.92611, 1.71218, 0)
 
 [connection signal="timeout" from="Timer" to="player" method="_on_timer_timeout"]
 [connection signal="timeout" from="fader/Timer" to="." method="_on_timer_timeout"]
