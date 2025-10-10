@@ -1,15 +1,61 @@
-[gd_scene load_steps=10 format=3 uid="uid://dc2og26ue2q4m"]
+[gd_scene load_steps=28 format=3 uid="uid://dc2og26ue2q4m"]
 
 [ext_resource type="Script" uid="uid://bdt0rx2suqtc6" path="res://scripts/oven.gd" id="1_dtlb7"]
 [ext_resource type="ArrayMesh" uid="uid://ysqecgm4y6bu" path="res://Assets/Models/cgaxis_models_116_06_obj_microwave.obj" id="1_jesd3"]
 [ext_resource type="AudioStream" uid="uid://cxr3n44iltkkt" path="res://Assets/Audios/microwave-oven-01-410907.mp3" id="3_v8esg"]
 [ext_resource type="AudioStream" uid="uid://pr1nvwx25ng8" path="res://Assets/Audios/oven-timer-complete-43537.mp3" id="4_fmqta"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fmqta"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lymdd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ry3ds"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ls8ri"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6tf5l"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4pf3v"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kv7yl"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptjjx"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v40tx"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0frs"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsc2i"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_70igw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccddy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ovkwf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jp0eu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r6ox1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jk0xl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4d2hx"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_dtlb7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jesd3"]
 transparency = 1
-albedo_color = Color(1, 1, 0, 0.847059)
+albedo_color = Color(1, 1, 0, 0.478431)
 emission_enabled = true
 emission = Color(1, 1, 0, 1)
 emission_energy_multiplier = 0.04
@@ -34,13 +80,32 @@ script = ExtResource("1_dtlb7")
 [node name="model" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.0900434, 0, 0, 0, 0.0900434, 0, 0, 0, 0.0900434, 0, 0, -1.83927)
 mesh = ExtResource("1_jesd3")
+surface_material_override/0 = SubResource("StandardMaterial3D_fmqta")
+surface_material_override/1 = SubResource("StandardMaterial3D_lymdd")
+surface_material_override/3 = SubResource("StandardMaterial3D_ry3ds")
+surface_material_override/4 = SubResource("StandardMaterial3D_ls8ri")
+surface_material_override/5 = SubResource("StandardMaterial3D_6tf5l")
+surface_material_override/6 = SubResource("StandardMaterial3D_4pf3v")
+surface_material_override/7 = SubResource("StandardMaterial3D_kv7yl")
+surface_material_override/8 = SubResource("StandardMaterial3D_ptjjx")
+surface_material_override/9 = SubResource("StandardMaterial3D_v40tx")
+surface_material_override/10 = SubResource("StandardMaterial3D_k0frs")
+surface_material_override/11 = SubResource("StandardMaterial3D_ls8ri")
+surface_material_override/12 = SubResource("StandardMaterial3D_jsc2i")
+surface_material_override/13 = SubResource("StandardMaterial3D_70igw")
+surface_material_override/14 = SubResource("StandardMaterial3D_ccddy")
+surface_material_override/15 = SubResource("StandardMaterial3D_ovkwf")
+surface_material_override/16 = SubResource("StandardMaterial3D_jp0eu")
+surface_material_override/17 = SubResource("StandardMaterial3D_r6ox1")
+surface_material_override/18 = SubResource("StandardMaterial3D_jk0xl")
+surface_material_override/21 = SubResource("StandardMaterial3D_4d2hx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(4.45759, 0, 0, 0, 4.45759, 0, 0, 0, 4.45759, 0, 0, -0.616837)
 shape = SubResource("BoxShape3D_dtlb7")
 
 [node name="emmision" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.506345, -0.000973159, -1.40077e-05, 2.03364e-10, 0.0106693, -0.256017, 0.00113118, 0.435626, 0.00627034, -0.159378, 0.363434, 0.117243)
+transform = Transform3D(0.530904, -0.000754152, -1.39305e-05, 2.13228e-10, 0.0082682, -0.254606, 0.00118605, 0.337589, 0.00623578, -0.188881, 0.363434, 0.117243)
 visible = false
 mesh = SubResource("PlaneMesh_v8esg")
 

@@ -26,7 +26,6 @@ func _input(event: InputEvent) -> void:
 			audio.play()
 			if texty1 == false:
 				player.change("")
-				$Timer.start()
 				
 
 				
@@ -46,9 +45,9 @@ func _on_body_exited(body: Node3D) -> void:
 
 
 func _on_timer_timeout() -> void:
-	player.change("Turn off the TV")
-	tv.tvused = true
-	tv.playtv()
+	player.change("Dispose the Cans")
+	#tv.tvused = true
+	#tv.playtv()
 	texty1 = true
 	$knocktimer.start
 				
