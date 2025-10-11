@@ -106,7 +106,6 @@ shape = SubResource("BoxShape3D_dtlb7")
 
 [node name="emmision" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.530904, -0.000754152, -1.39305e-05, 2.13228e-10, 0.0082682, -0.254606, 0.00118605, 0.337589, 0.00623578, -0.188881, 0.363434, 0.117243)
-visible = false
 mesh = SubResource("PlaneMesh_v8esg")
 
 [node name="button" type="MeshInstance3D" parent="."]
@@ -119,11 +118,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0838178, 0.294803, 0.1807)
 stream = ExtResource("3_v8esg")
 
 [node name="oventimer" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 25.0
 one_shot = true
 
 [node name="Oven-timer-complete" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_fmqta")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.521843, 0.505141, 0.164418)
+text = "25"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
