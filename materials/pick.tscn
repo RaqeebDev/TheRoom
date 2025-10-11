@@ -11,20 +11,19 @@
 albedo_texture = ExtResource("1_0c8md")
 
 [node name="pick" type="RigidBody3D" groups=["pickable"]]
-transform = Transform3D(0.473207, 0, 0, 0, 0.473207, 0, 0, 0, 0.473207, 0, 0, 0)
 script = ExtResource("1_u3kee")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.53967, 0, 0, 0, 0.53967, 0, 0, 0, 0.53967, 0, 0, 0)
+transform = Transform3D(0.381364, 0, 0, 0, 0.381364, 0, 0, 0, 0.381364, 0.00116965, 0.00213006, -0.0391962)
 shape = SubResource("BoxShape3D_7fptk")
 
 [node name="can" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0390794, 0, 0, 0, 0.0390794, 0, 0, 0, 0.0390794, 0.0079748, 0.0145229, -0.267243)
+transform = Transform3D(0.0276159, 0, 0, 0, 0.0276159, 0, 0, 0, 0.0276159, 0.00680514, 0.0123928, -0.255787)
 material_override = SubResource("StandardMaterial3D_gr4om")
 mesh = ExtResource("2_u3kee")
 
 [node name="cansound" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(2.11324, 0, 0, 0, 2.11324, 0, 0, 0, 2.11324, 0.0759122, 0.226943, 0.0778976)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0759122, 0.226943, 0.0778976)
 stream = ExtResource("4_gr4om")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

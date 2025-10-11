@@ -53,13 +53,13 @@ data = PackedVector3Array(0.1492, 0.1184, -0.0236, 0.151, 0.1184, 0, 0, 0.1184, 
 script = ExtResource("1_jajec")
 
 [node name="Refuse bin" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.78582, 0, 0, 0, 0.993331, -7.57794e-08, 0, 4.34199e-08, 1.73363, -0.0067836, -1.19209e-07, -0.0502017)
+transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, -0.0067836, -1.19209e-07, -0.0502017)
 material_override = SubResource("StandardMaterial3D_jajec")
 mesh = SubResource("ArrayMesh_guo57")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.78582, 0, 0, 0, 0.993331, -7.57794e-08, 0, 4.34199e-08, 1.73363, -0.0067836, -1.19209e-07, -0.0502017)
+transform = Transform3D(1, 0, 0, 0, 1, -4.37114e-08, 0, 4.37114e-08, 1, -0.0067836, -1.19209e-07, -0.0502017)
 shape = SubResource("ConcavePolygonShape3D_642qi")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

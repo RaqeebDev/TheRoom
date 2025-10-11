@@ -21,6 +21,10 @@ var gravity = 9.8
 @onready var camera = $Head/Camera3D
 @onready var tasks: Label = $tasks
 @onready var timer: Timer = $"../Timer"
+@onready var  audiocan = get_node("/root/Main/pick/cansound")
+@onready var  audiocan2 = get_node("/root/Main/pick/cansound")
+@onready var  audiocan3 = get_node("/root/Main/pick/cansound")
+@onready var  can = get_node("/root/Main/pick")
 
 # Pickable system
 @export_category("Pickable System")
@@ -28,6 +32,7 @@ var picked_object: RigidBody3D = null
 @export var base_throw_strength: float = 20.0
 @onready var pickup_raycast = $Head/Camera3D/RayCast3D
 @onready var pickup_hand = $Head/Camera3D/hand
+
 
 @onready var main: Node3D = $".."
 
@@ -38,12 +43,29 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		if picked_object:
 			drop_object()
+			
+			if audiocan:	
+				audiocan.play()
+			elif audiocan2:
+				audiocan2.play()	
+			elif audiocan3:
+				audiocan3.play()	
+			
+			await get_tree().create_timer(0.5).timeout
+			
 		else:
 			var object = pickup_raycast.get_collider()
 			if object and object.is_in_group("pickable"):
 				pick_up_object(object)
-	elif event.is_action_pressed("throw") and picked_object:
-		throw_object()
+	#elif event.is_action_pressed("throw") and picked_object:
+		#throw_object()
+		#
+		#audiocan.play()
+		#
+		#await get_tree().create_timer(0.5).timeout
+		#
+		
+		
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:

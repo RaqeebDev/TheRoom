@@ -10,8 +10,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-	
 
-
-func _on_body_entered(body: Node) -> void:
-	$cansound.play()
+			
+func hello():
+	pass #huvjhfzjhbvjhb
+	print("wasuupppp gngngbn")
+				
