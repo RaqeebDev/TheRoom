@@ -17,13 +17,16 @@ func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("pickable"):
 		
 		count = count + 1
-		player.change("Dispose the Cans %d/4 " % count )
+		player.change("Dispose the Cans %d/3 " % count )
 		
 		await get_tree().create_timer(0.7).timeout
 		if is_instance_valid(body):
 			body.queue_free()
 		
 		
-		if count == 4:
-			pass
+		if count == 3:
+			player.change(" ")
+			await get_tree().create_timer(5.0).timeout
+			player.change(" Cook some food ")
+			
 			

@@ -44,12 +44,7 @@ func _input(event: InputEvent) -> void:
 		if picked_object:
 			drop_object()
 			
-			if audiocan:	
-				audiocan.play()
-			elif audiocan2:
-				audiocan2.play()	
-			elif audiocan3:
-				audiocan3.play()	
+			$can.play()
 			
 			await get_tree().create_timer(0.5).timeout
 			
