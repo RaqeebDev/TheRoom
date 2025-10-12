@@ -5,6 +5,8 @@ extends Node3D
 @onready var ring: AudioStreamPlayer = $ring
 @onready var ended: AudioStreamPlayer = $ended
 
+
+
 @onready var in_areaphone = false
 @onready var used = true
 
@@ -47,6 +49,6 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	player.label()
 
 
-func _on_timer_timeout() -> void:
-	player.done()
-	used = true
+#func _on_timer_timeout() -> void:
+	#player.done()
+	#used = true

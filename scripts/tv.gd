@@ -75,7 +75,7 @@ func playtv():
 
 
 func _on_timer_timeout() -> void:
-	phone.used = false
+	
 	tvused = false
 	player.change("Pickup The Call !")
-	phone.playy()
+	#phone.playy()

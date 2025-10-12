@@ -1,6 +1,7 @@
 extends Area3D
 
 @onready var  player = get_node("/root/Main/player")
+@onready var  phone = get_node("/root/Main/phone")
 
 @onready var in_area_oven = false
 
@@ -19,6 +20,7 @@ func _process(delta: float) -> void:
 	
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") && in_area_oven == true:
+			$Label3D.show()
 			$emmision.show()
 			$button.show()
 			$ovensound.play()
@@ -41,8 +43,27 @@ func _on_body_exited(body: Node3D) -> void:
 		player.label()
 
 
+
+@onready var cnt = 25;
 func _on_oventimer_timeout() -> void:
-	$ovensound.stop()
-	$"Oven-timer-complete".play()
-	$emmision.hide()
-	$button.hide()
+	
+	cnt-=1;
+	$Label3D.text = str(cnt)
+	print(cnt)
+	if cnt == 0:
+		$oventimer.stop()
+		
+		
+		$ovensound.stop()
+		$"Oven-timer-complete".play()
+		$emmision.hide()
+		$button.hide()
+		await get_tree().create_timer(0.7).timeout
+		$Label3D.hide()
+		phone.used = false
+		phone.play()
+		
+		cnt = 25
+		
+	
+	

@@ -658,7 +658,7 @@ transform = Transform3D(2.64276, 0, 0, 0, 1.4073, -1.33924e-07, 0, 6.1515e-08, 3
 wait_time = 2.0
 
 [node name="Oven" parent="." instance=ExtResource("12_60rfo")]
-transform = Transform3D(0.79337, 0, 0.148332, 0, 0.807118, 0, -0.148332, 0, 0.79337, 2.21679, 1.96473, -6.74802)
+transform = Transform3D(0.79337, 0, 0.148332, 0, 0.807118, 0, -0.148332, 0, 0.79337, 2.81436, 1.96473, -6.74802)
 
 [node name="donetimer" type="Timer" parent="."]
 wait_time = 3.0
