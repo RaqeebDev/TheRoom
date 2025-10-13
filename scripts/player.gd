@@ -127,9 +127,14 @@ func breath():
 	$breath.play()
 
 func _on_timer_timeout() -> void:
-	$"../light".visible = false
+	var light = $"../light"
+	light.light_color = Color(1, 0, 0) # Red
+	
+	await get_tree().create_timer(1.0).timeout
+	light.visible = false
 	tv.playtv()
 	$sus.play()
+
 	
 	#tv.intphone()
 	

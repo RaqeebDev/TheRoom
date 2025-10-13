@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var emmision: MeshInstance3D = $emmision
 @onready var  player = get_node("/root/Main/player")
+@onready var  tv = get_node("/root/Main/Tv")
 @onready var ring: AudioStreamPlayer = $ring
 @onready var ended: AudioStreamPlayer = $ended
 
@@ -63,5 +64,6 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 
 
 func _on_timer_timeout() -> void:
+	tv. beforephonetv()
 	player.done()
 	used = true

@@ -33,7 +33,7 @@ func _physics_process(delta):
 			
 		else:
 			
-			
+			$knocktimer.start()
 			plane.material_override = default_material  # revert to original
 			sound.stop()
 			light.visible = !light.visible
@@ -44,9 +44,9 @@ func _physics_process(delta):
 				
 
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
+func _on_area_3d_body_entered(body: Node3D) -> void :
 	
-	if body.is_in_group("player"):
+	if body.is_in_group("player")  && beforephone == true :
 		
 		in_area_tv = true
 		player.label()
@@ -90,3 +90,7 @@ func _on_timer_timeout() -> void:
 	tvused = false
 	
 	#phone.playy()
+
+
+func _on_knocktimer_timeout() -> void:
+	player.change("Check the door!")

@@ -20,6 +20,11 @@ extends Node3D
 func _ready() -> void:
 	$fader.show()
 	
+	await get_tree().create_timer(9.0).timeout
+	$light.visible = ! $light.visible
+	await get_tree().create_timer(0.5).timeout
+	$light.visible = ! $light.visible
+	
 
 
 func _input(event: InputEvent) -> void:
@@ -63,3 +68,6 @@ func _on_donetimer_timeout() -> void:
 	wall6.material_override = wallreal
 	floor.material_override = floorreal
 	ceil.material_override = floorreal
+	
+	
+	

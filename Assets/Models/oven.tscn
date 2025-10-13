@@ -117,7 +117,7 @@ mesh = SubResource("CapsuleMesh_jesd3")
 [node name="ovensound" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0838178, 0.294803, 0.1807)
 stream = ExtResource("3_v8esg")
-volume_db = -26.667
+volume_db = -12.103
 
 [node name="oventimer" type="Timer" parent="."]
 

@@ -21,14 +21,14 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") && in_area_oven == true && in_oven_time == true :
 			
-		if cnt > 17:	
+		if cnt > 12:	
 			player.change(" ")
 			$Label3D.show()
 			$emmision.show()
 			$button.show()
 			$ovensound.play()
 			$oventimer.start()
-		elif cnt == 17:
+		elif cnt == 12:
 			$"Oven-timer-complete".play
 			cnt = 0
 				
@@ -59,14 +59,14 @@ func _on_oventimer_timeout() -> void:
 	
 	
 	
-	if cnt > 17:
+	if cnt > 12:
 		cnt-=1;
 		$Label3D.text = str(cnt)
 	else:
 		$oventimer.stop()	
 	
 	
-	if cnt == 17:
+	if cnt == 12:
 		
 		phone.used = false
 		phone.playy()
