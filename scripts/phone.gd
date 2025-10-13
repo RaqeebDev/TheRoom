@@ -27,17 +27,20 @@ func _input(event: InputEvent) -> void:
 		ended.play()
 		emmision.visible = false
 		
-		if call2nd == false:
-			call2nd = true
-		elif call2nd == true:
-			$Timer.start()
-			player.done()
+
 			
 			
-			print("done")	
+				
 		
 		if used == false:
 			player.change("")	
+			
+			if call2nd == false:
+				call2nd = true
+			elif call2nd == true:
+				$Timer.start()
+				used = true
+				
 			
 			
 
@@ -59,6 +62,6 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	player.label()
 
 
-#func _on_timer_timeout() -> void:
-	#player.done()
-	#used = true
+func _on_timer_timeout() -> void:
+	player.done()
+	used = true
