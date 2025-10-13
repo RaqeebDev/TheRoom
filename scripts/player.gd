@@ -129,6 +129,9 @@ func breath():
 func _on_timer_timeout() -> void:
 	$"../light".visible = false
 	tv.playtv()
+	$sus.play()
+	
+	#tv.intphone()
 	
 	
 

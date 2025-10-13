@@ -25,11 +25,11 @@ func _on_body_entered(body: Node3D) -> void:
 			body.queue_free()
 		
 		
-		if count == 3:
+		if count >= 3:
 			oven.onovenfrombin()
 			player.change(" ")
 			await get_tree().create_timer(5.0).timeout
 			
-			player.change(" Cook some food ")
+			player.change(" Cook some food :) ")
 			
 			

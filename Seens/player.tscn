@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://chih3v5qwsi7q"]
+[gd_scene load_steps=12 format=3 uid="uid://chih3v5qwsi7q"]
 
 [ext_resource type="Script" uid="uid://bfycjf2h10n7" path="res://scripts/player.gd" id="1_qv6uv"]
 [ext_resource type="FontFile" uid="uid://bcnn55oh62f32" path="res://Assets/fonts/VCR_OSD_MONO_1.001.ttf" id="2_nmtxl"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://duitywjdgip4" path="res://Assets/Audios/white-noise-358382 (1).mp3" id="4_7k26w"]
 [ext_resource type="AudioStream" uid="uid://bio0d04pfqsqu" path="res://Assets/Audios/breathing-fast-247449.mp3" id="5_7k26w"]
 [ext_resource type="AudioStream" uid="uid://be8m16x83kffb" path="res://Assets/Audios/empty-beer-can-table-foley-drop-1-238691.mp3" id="6_ls23l"]
+[ext_resource type="AudioStream" uid="uid://b4txlyf6m1uot" path="res://Assets/Audios/menu-change-89197.mp3" id="7_py5uh"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_nmtxl"]
 
@@ -101,3 +102,6 @@ volume_db = 24.0
 [node name="can" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(0.707074, 0, 0, 0, 0.707074, 0, 0, 0, 0.707074, 5.77279, -0.6286, -10.1688)
 stream = ExtResource("6_ls23l")
+
+[node name="sus" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_py5uh")

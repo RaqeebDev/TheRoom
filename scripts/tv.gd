@@ -5,7 +5,7 @@ extends StaticBody3D
 @onready var light: SpotLight3D = $SpotLight3D
 @onready var sound: AudioStreamPlayer3D = $soundtv
 @onready var  phone = get_node("/root/Main/phone")
-
+@onready var  int_phone = false
 
 var playing: bool = false
 var is_changed: bool = false
@@ -13,6 +13,11 @@ var default_material: Material = null
 var in_area_tv = false
 
 var tvused = false
+var beforephone = false
+
+
+func beforephonetv():
+	beforephone = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,7 +26,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	if Input.is_action_just_pressed("interact") && in_area_tv == true   :
+	if Input.is_action_just_pressed("interact") && in_area_tv == true   && beforephone == true:
 		
 		if not is_changed:
 			playtv()
@@ -48,7 +53,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("player") && beforephone == true:
 		in_area_tv = false
 		player.label()
 		
@@ -59,6 +64,10 @@ func playtv():
 			plane.material_override = new_material
 			sound.play() 
 			light.visible = !light.visible
+			
+			
+			#if int_phone:
+				#
 			
 			# Enable emission
 			new_material.emission_enabled = true
@@ -72,6 +81,8 @@ func playtv():
 			
 	
 			is_changed = true		
+
+
 
 
 func _on_timer_timeout() -> void:

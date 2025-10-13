@@ -672,7 +672,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05432, 0.801712, -1.48108)
 mass = 430.672
 
 [node name="pick2" parent="." instance=ExtResource("13_rcoig")]
-transform = Transform3D(0.720624, 0, 0.693326, 0, 1, 0, -0.693326, 0, 0.720624, 0.705098, 0.563568, 3.18939)
+transform = Transform3D(0.720624, 0, 0.693326, 0, 1, 0, -0.693326, 0, 0.720624, 0.705098, 0.632551, 3.18939)
 mass = 430.672
 
 [node name="pick3" parent="." instance=ExtResource("13_rcoig")]
