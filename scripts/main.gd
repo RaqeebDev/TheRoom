@@ -29,7 +29,10 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") && used == false:
+		$fader/Label2.hide()
+		$fader/Label.hide()
 		$fader/AnimationPlayer.play("fade_out")
+		
 		$fader/Timer.start()
 		used = true
 		

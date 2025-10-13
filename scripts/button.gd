@@ -4,6 +4,7 @@ extends Area3D
 @onready var  light = get_node("/root/Main/light")
 @onready var  tv = get_node("/root/Main/Tv")
 
+
 @onready var in_area_button = false
 
 
@@ -45,6 +46,7 @@ func _on_body_exited(body: Node3D) -> void:
 
 func _on_timer_timeout() -> void:
 	player.change("Dispose the Cans")
+	player.buttonforpick()
 	print("Dispose the Cans")
 	#tv.tvused = true
 	#tv.playtv()

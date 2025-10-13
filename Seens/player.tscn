@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://chih3v5qwsi7q"]
+[gd_scene load_steps=13 format=3 uid="uid://chih3v5qwsi7q"]
 
 [ext_resource type="Script" uid="uid://bfycjf2h10n7" path="res://scripts/player.gd" id="1_qv6uv"]
 [ext_resource type="FontFile" uid="uid://bcnn55oh62f32" path="res://Assets/fonts/VCR_OSD_MONO_1.001.ttf" id="2_nmtxl"]
@@ -19,6 +19,10 @@ font_size = 21
 [sub_resource type="LabelSettings" id="LabelSettings_nmtxl"]
 font_size = 38
 font_color = Color(0.510601, 0.510601, 0.510601, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_py5uh"]
+font_size = 22
+font_color = Color(0.552956, 0.552956, 0.552956, 1)
 
 [node name="player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1.41428, 0, 0, 0, 1.41428, 0, 0, 0, 1.41428, 0, 0.889016, 0)
@@ -105,3 +109,18 @@ stream = ExtResource("6_ls23l")
 
 [node name="sus" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_py5uh")
+
+[node name="picklabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 97.0
+offset_right = 41.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "[E] PICK"
+label_settings = SubResource("LabelSettings_py5uh")

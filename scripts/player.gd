@@ -6,6 +6,8 @@ const SPRINT_SPEED = 8.0
 const JUMP_VELOCITY = 4.8
 const SENSITIVITY = 0.004
 
+var button_for_pick = false
+
 # Bob variables
 const BOB_FREQ = 2.4
 const BOB_AMP = 0.08
@@ -21,11 +23,11 @@ var gravity = 9.8
 @onready var camera = $Head/Camera3D
 @onready var tasks: Label = $tasks
 @onready var timer: Timer = $"../Timer"
-@onready var  audiocan = get_node("/root/Main/pick/cansound")
-@onready var  audiocan2 = get_node("/root/Main/pick/cansound")
-@onready var  audiocan3 = get_node("/root/Main/pick/cansound")
+@onready var audiocan = get_node("/root/Main/pick/cansound")
+@onready var audiocan2 = get_node("/root/Main/pick/cansound")
+@onready var audiocan3 = get_node("/root/Main/pick/cansound")
 @onready var tv = get_node("/root/Main/Tv")
-@onready var  can = get_node("/root/Main/pick")
+@onready var can = get_node("/root/Main/pick")
 
 # Pickable system
 @export_category("Pickable System")
@@ -33,8 +35,6 @@ var picked_object: RigidBody3D = null
 @export var base_throw_strength: float = 20.0
 @onready var pickup_raycast = $Head/Camera3D/RayCast3D
 @onready var pickup_hand = $Head/Camera3D/hand
-
-
 
 @onready var main: Node3D = $".."
 
@@ -45,24 +45,12 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
 		if picked_object:
 			drop_object()
-			
 			$can.play()
-			
 			await get_tree().create_timer(0.5).timeout
-			
 		else:
 			var object = pickup_raycast.get_collider()
-			if object and object.is_in_group("pickable"):
+			if object and object.is_in_group("pickable") and button_for_pick == true:
 				pick_up_object(object)
-	#elif event.is_action_pressed("throw") and picked_object:
-		#throw_object()
-		#
-		#audiocan.play()
-		#
-		#await get_tree().create_timer(0.5).timeout
-		#
-		
-		
 
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
@@ -89,7 +77,6 @@ func _physics_process(delta):
 		if direction:
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
-			
 		else:
 			$foot.play()
 			velocity.x = lerp(velocity.x, 0.0, delta * 7.0)
@@ -110,43 +97,23 @@ func _physics_process(delta):
 			var push_dir = -collision.get_normal()
 			collider.apply_impulse(Vector3.ZERO, push_dir * 2.5)
 
-	
+	# Check if looking at pickable object and show label accordingly
+	var object = pickup_raycast.get_collider()
+	if object and object.is_in_group("pickable"):
+		if button_for_pick == true:
+			$picklabel.show()
+		else:
+			$picklabel.hide()
+	else:
+		$picklabel.hide()
+
 	move_and_slide()
 
-# UI & game logic functions
-func change(texty):
-	tasks.text = texty
-
-func done():
-	timer.start()
-
-func label():
-	$Label.visible = !$Label.visible
-
-func breath():
-	$breath.play()
-
-func _on_timer_timeout() -> void:
-	var light = $"../light"
-	light.light_color = Color(1, 0, 0) # Red
-	
-	await get_tree().create_timer(1.0).timeout
-	light.visible = false
-	tv.playtv()
-	$sus.play()
-
-	
-	#tv.intphone()
-	
-	
-
-
-#pickup/throw
-func pick_up_object(object: RigidBody3D):
+func pick_up_object(object):
 	if not object or not object.is_inside_tree():
 		return
 
-	if pickup_hand and pickup_hand.is_inside_tree():
+	if pickup_hand and pickup_hand.is_inside_tree() and button_for_pick == true:
 		if object.get_parent():
 			var saved_transform = object.global_transform
 			object.get_parent().remove_child(object)
@@ -164,9 +131,6 @@ func pick_up_object(object: RigidBody3D):
 			picked_object.transform.basis = pickup_hand.global_transform.basis.inverse() * saved_transform.basis
 
 			print("[DEBUG] Picked up:", picked_object.name)
-	else:
-		return
-
 
 func drop_object():
 	if picked_object:
@@ -201,3 +165,29 @@ func throw_object():
 		
 		print("[DEBUG] Threw object with velocity:", picked_object.linear_velocity)
 		picked_object = null
+
+# UI & game logic functions
+func change(texty):
+	tasks.text = texty
+
+func done():
+	timer.start()
+
+func label():
+	$Label.visible = !$Label.visible
+
+func breath():
+	$breath.play()
+
+func _on_timer_timeout() -> void:
+	var light = $"../light"
+	light.light_color = Color(1, 0, 0) # Red
+	
+	await get_tree().create_timer(1.0).timeout
+	light.visible = false
+	tv.playtv()
+	$sus.play()
+
+#pickup/throw
+func buttonforpick():
+	button_for_pick = true
