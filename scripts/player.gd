@@ -24,6 +24,7 @@ var gravity = 9.8
 @onready var  audiocan = get_node("/root/Main/pick/cansound")
 @onready var  audiocan2 = get_node("/root/Main/pick/cansound")
 @onready var  audiocan3 = get_node("/root/Main/pick/cansound")
+@onready var tv = get_node("/root/Main/Tv")
 @onready var  can = get_node("/root/Main/pick")
 
 # Pickable system
@@ -32,6 +33,7 @@ var picked_object: RigidBody3D = null
 @export var base_throw_strength: float = 20.0
 @onready var pickup_raycast = $Head/Camera3D/RayCast3D
 @onready var pickup_hand = $Head/Camera3D/hand
+
 
 
 @onready var main: Node3D = $".."
@@ -116,7 +118,6 @@ func change(texty):
 	tasks.text = texty
 
 func done():
-	$"../light".visible = false
 	timer.start()
 
 func label():
@@ -127,7 +128,9 @@ func breath():
 
 func _on_timer_timeout() -> void:
 	$"../light".visible = false
-	main.donemain()
+	tv.playtv()
+	
+	
 
 
 #pickup/throw

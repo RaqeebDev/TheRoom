@@ -20,17 +20,26 @@ func _process(delta: float) -> void:
 	
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact") && in_area_oven == true && in_oven_time == true :
+			
+		if cnt > 17:	
 			player.change(" ")
 			$Label3D.show()
 			$emmision.show()
 			$button.show()
 			$ovensound.play()
 			$oventimer.start()
+		elif cnt == 17:
+			$"Oven-timer-complete".play
+			cnt = 0
+				
+			
 
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		in_area_oven = true
+		
+	if in_oven_time == true :
 		player.label()
 		
 		
@@ -48,25 +57,43 @@ func _on_body_exited(body: Node3D) -> void:
 @onready var cnt = 25;
 func _on_oventimer_timeout() -> void:
 	
-	cnt-=1;
-	$Label3D.text = str(cnt)
-	print(cnt)
-	if cnt == 0:
-		$oventimer.stop()
+	
+	
+	if cnt > 17:
+		cnt-=1;
+		$Label3D.text = str(cnt)
+	else:
+		$oventimer.stop()	
+	
+	
+	if cnt == 17:
 		
-		
-		$ovensound.stop()
-		$"Oven-timer-complete".play()
-		$emmision.hide()
-		$button.hide()
-		await get_tree().create_timer(0.7).timeout
-		$Label3D.hide()
 		phone.used = false
 		phone.playy()
-		
 		player.change("Pickup The Call !")
+		$ovensound.stop()
+		$emmision.hide()
 		
-		cnt = 25
+		$Label3D.text = "00"
+		$button.hide()
+		
+		
+		
+	#if cnt == 0:
+		#$oventimer.stop()
+		#
+		#
+		#$ovensound.stop()
+		#$"Oven-timer-complete".play()
+		#$emmision.hide()
+		#$button.hide()
+		#await get_tree().create_timer(0.7).timeout
+		#$Label3D.hide()
+		#
+		
+		
+		
+		#cnt = 25
 		
 	
 func onovenfrombin():

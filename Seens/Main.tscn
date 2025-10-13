@@ -520,10 +520,10 @@ material = ExtResource("2_f5nlp")
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -9.72446, 0, -2.82153)
 
 [node name="Sofa" type="StaticBody3D" parent="."]
-transform = Transform3D(-0.327256, 0, 0.0174772, 0, 0.327722, 0, -0.0174772, 0, -0.327256, -0.0391308, 0.506053, 2.63443)
+transform = Transform3D(-0.327256, 0, 0.0174772, 0, 0.327722, 0, -0.0174772, 0, -0.327256, -0.0391308, 0.506053, 2.88041)
 
 [node name="loungeDesignSofaCorner2" type="MeshInstance3D" parent="Sofa"]
-transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, 0, 0, 0)
+transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, -0.0216704, 0, -0.405772)
 mesh = SubResource("ArrayMesh_v7y7g")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_pniy4")
@@ -605,7 +605,7 @@ transform = Transform3D(-4.65528e-08, 0, -0.62331, 0, 0.342645, 0, 1.065, 0, -2.
 shape = SubResource("ConvexPolygonShape3D_3oi10")
 
 [node name="player" parent="." instance=ExtResource("2_h1hhx")]
-transform = Transform3D(0.878183, 0, 0, 0, 0.878183, 0, 0, 0, 0.878183, -1.89256, 1.44809, -3.78129)
+transform = Transform3D(0.878183, 0, 0, 0, 0.878183, 0, 0, 0, 0.878183, -2.82801, 1.44809, -0.746833)
 
 [node name="Tv" parent="." instance=ExtResource("3_3oi10")]
 transform = Transform3D(0.840727, 0, 0, 0, 0.840727, 0, 0, 0, 0.840727, -2.38115, 1.34521, 0.769881)
@@ -641,6 +641,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_f5nlp")
 [node name="doorway" parent="." instance=ExtResource("8_jfi8r")]
 transform = Transform3D(-1.10053e-08, 0, -0.251771, 0, 0.251771, 0, 0.251771, 0, -1.10053e-08, -4.69048, 0.506052, -0.794312)
 
+[node name="doorway2" parent="." instance=ExtResource("8_jfi8r")]
+transform = Transform3D(-1.10053e-08, 0, -0.251771, 0, 0.251771, 0, 0.251771, 0, -1.10053e-08, 4.66036, 0.506052, -1.70382)
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.5
 one_shot = true
@@ -673,7 +676,7 @@ transform = Transform3D(0.720624, 0, 0.693326, 0, 1, 0, -0.693326, 0, 0.720624, 
 mass = 430.672
 
 [node name="pick3" parent="." instance=ExtResource("13_rcoig")]
-transform = Transform3D(0.663404, 0, 0.748261, 0, 1, 0, -0.748261, 0, 0.663404, 1.59103, 1.47409, -0.859118)
+transform = Transform3D(0.663404, 0, 0.748261, 0.00625548, 0.999965, -0.00554608, -0.748235, 0.00836003, 0.663381, 1.59103, 1.47409, -0.454817)
 mass = 430.672
 
 [node name="upperkitchencabinet" type="Node3D" parent="."]
@@ -689,9 +692,6 @@ transform = Transform3D(-1.42505e-08, 0, 0.326013, 0, 0.326013, 0, -0.326013, 0,
 
 [node name="kitchenCabinetUpperDouble4" parent="upperkitchencabinet" instance=ExtResource("14_jfi8r")]
 transform = Transform3D(-1.42505e-08, 0, 0.326013, 0, 0.326013, 0, -0.326013, 0, -1.42505e-08, 3.81479, 2.49471, -5.10192)
-
-[node name="carpet" parent="." instance=ExtResource("16_0103b")]
-transform = Transform3D(1.35672, 0, 0, 0, 1.35672, 0, 0, 0, 1.35672, 0.668421, 0.516349, 1.43233)
 
 [node name="carpet2" parent="." instance=ExtResource("16_0103b")]
 transform = Transform3D(1.35672, 0, 0, 0, 1.35672, 0, 0, 0, 1.35672, 0.668421, 0.516349, -4.53665)

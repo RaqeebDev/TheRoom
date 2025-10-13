@@ -5,6 +5,7 @@ extends Node3D
 @onready var ring: AudioStreamPlayer = $ring
 @onready var ended: AudioStreamPlayer = $ended
 
+@onready var call2nd = false
 
 
 @onready var in_areaphone = false
@@ -20,15 +21,24 @@ func _process(delta: float) -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("interact") && in_areaphone:
-		print("nophone")
+	if Input.is_action_just_pressed("interact") && in_areaphone :
+	
 		ring.stop()
 		ended.play()
 		emmision.visible = false
 		
+		if call2nd == false:
+			call2nd = true
+		elif call2nd == true:
+			$Timer.start()
+			player.done()
+			
+			
+			print("done")	
+		
 		if used == false:
 			player.change("")	
-			$Timer.start()
+			
 			
 
 func playy():
