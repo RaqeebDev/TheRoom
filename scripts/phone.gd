@@ -33,9 +33,9 @@ func _input(event: InputEvent) -> void:
 
 func playy():
 	emmision.visible = true
-	print("yesphone")
+	#print("yesphone")
 	ring.play()
-	print("playing")
+	#print("playing")
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:

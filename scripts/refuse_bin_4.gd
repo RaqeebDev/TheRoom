@@ -1,5 +1,6 @@
 extends Area3D
 @onready var  player = get_node("/root/Main/player")
+@onready var  oven = get_node("/root/Main/Oven")
 
 @onready var count = 0
 
@@ -25,8 +26,10 @@ func _on_body_entered(body: Node3D) -> void:
 		
 		
 		if count == 3:
+			oven.onovenfrombin()
 			player.change(" ")
 			await get_tree().create_timer(5.0).timeout
+			
 			player.change(" Cook some food ")
 			
 			

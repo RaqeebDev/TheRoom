@@ -481,9 +481,9 @@ size = Vector3(10, 0.248047, 4.61719)
 material = ExtResource("3_pp7ow")
 
 [node name="wall2" type="CSGBox3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.310333, 2.14189, 5.02869)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.00177693, 2.44023, 4.99682)
 use_collision = true
-size = Vector3(10.6207, 0.248047, 4.61719)
+size = Vector3(10.0036, 0.248047, 4.02051)
 material = ExtResource("3_pp7ow")
 
 [node name="wall3" type="CSGBox3D" parent="Walls"]
@@ -605,7 +605,7 @@ transform = Transform3D(-4.65528e-08, 0, -0.62331, 0, 0.342645, 0, 1.065, 0, -2.
 shape = SubResource("ConvexPolygonShape3D_3oi10")
 
 [node name="player" parent="." instance=ExtResource("2_h1hhx")]
-transform = Transform3D(0.878183, 0, 0, 0, 0.878183, 0, 0, 0, 0.878183, 0.47174, 2.7585, -3.89034)
+transform = Transform3D(0.878183, 0, 0, 0, 0.878183, 0, 0, 0, 0.878183, -1.89256, 1.44809, -3.78129)
 
 [node name="Tv" parent="." instance=ExtResource("3_3oi10")]
 transform = Transform3D(0.840727, 0, 0, 0, 0.840727, 0, 0, 0, 0.840727, -2.38115, 1.34521, 0.769881)
@@ -625,7 +625,7 @@ shape = SubResource("ConcavePolygonShape3D_by0ap")
 transform = Transform3D(-2.75141, 0, 2.40536e-07, 0, 2.75141, 0, -2.40536e-07, 0, -2.75141, 3.48996, 1.43567, 4.45065)
 
 [node name="button" parent="." instance=ExtResource("5_7ti41")]
-transform = Transform3D(0.00117461, 0, -0.166996, 0, 0.167, 0, 0.166996, 0, 0.00117461, -4.73352, 2.08279, -5.05847)
+transform = Transform3D(0.00117461, 0, -0.166996, 0, 0.167, 0, 0.166996, 0, 0.00117461, -4.73352, 2.08279, -4.39252)
 
 [node name="light" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.637899, 3.68848, -3.16311)
@@ -665,11 +665,11 @@ wait_time = 3.0
 one_shot = true
 
 [node name="pick" parent="." instance=ExtResource("13_rcoig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29929, 2.75092, -1.48108)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05432, 0.801712, -1.48108)
 mass = 430.672
 
 [node name="pick2" parent="." instance=ExtResource("13_rcoig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40338, 0.699097, 2.70908)
+transform = Transform3D(0.720624, 0, 0.693326, 0, 1, 0, -0.693326, 0, 0.720624, 0.705098, 0.563568, 3.18939)
 mass = 430.672
 
 [node name="pick3" parent="." instance=ExtResource("13_rcoig")]

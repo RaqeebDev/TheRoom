@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://qr1ysbajg5wb" path="res://Assets/Audios/fast-knocking-on-door-352704.mp3" id="3_5vxhh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_phi84"]
+size = Vector3(0.589905, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycxth"]
 
@@ -16,7 +17,7 @@ transform = Transform3D(0.00117461, 0, -0.166996, 0, 0.167, 0, 0.166996, 0, 0.00
 script = ExtResource("1_ycxth")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(14.2519, 0, 0, 0, 14.2519, 0, 0, 0, 14.2519, 0, 0, 0)
+transform = Transform3D(14.2519, 0, 1.49012e-08, 0, 14.2519, 0, -1.49012e-08, 0, 14.2519, -0.471903, 0, -4.65661e-10)
 shape = SubResource("BoxShape3D_phi84")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -30,14 +31,9 @@ stream = ExtResource("2_c62ga")
 wait_time = 3.0
 one_shot = true
 
-[node name="knocktimer" type="Timer" parent="."]
-wait_time = 18.0
-one_shot = true
-
 [node name="knock" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_5vxhh")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="knocktimer" to="." method="_on_knocktimer_timeout"]

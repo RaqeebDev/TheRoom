@@ -21,6 +21,8 @@ font_color = Color(0.510601, 0.510601, 0.510601, 1)
 
 [node name="player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(1.41428, 0, 0, 0, 1.41428, 0, 0, 0, 1.41428, 0, 0.889016, 0)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_qv6uv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -82,7 +84,7 @@ offset_top = 11.0
 offset_right = -19.0
 offset_bottom = 34.0
 grow_horizontal = 0
-text = "Switch on the light!"
+text = "Find the Light Button!"
 uppercase = true
 
 [node name="foot" type="AudioStreamPlayer" parent="."]
