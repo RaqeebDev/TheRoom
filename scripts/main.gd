@@ -20,10 +20,16 @@ extends Node3D
 func _ready() -> void:
 	$fader.show()
 	
-	await get_tree().create_timer(9.0).timeout
+	await get_tree().create_timer(45.0).timeout
 	$light.visible = ! $light.visible
-	await get_tree().create_timer(0.5).timeout
+	$bone.play()
+	await get_tree().create_timer(0.6).timeout
 	$light.visible = ! $light.visible
+	$bone.play()
+	
+	
+	
+	
 	
 
 

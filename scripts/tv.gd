@@ -93,4 +93,6 @@ func _on_timer_timeout() -> void:
 
 
 func _on_knocktimer_timeout() -> void:
-	player.change("Check the door!")
+	$"../end".show()
+	$"Avoid-horror-268576".play()
+	

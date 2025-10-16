@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://bds5mpxylt8vb"]
+
+[ext_resource type="Script" uid="uid://bd00pwq7unaeo" path="res://scripts/menu.gd" id="1_7gs7p"]
+
+[node name="menu" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.2484, 0.2484, 0.2484, 1)
+script = ExtResource("1_7gs7p")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -577.0
+offset_top = -120.0
+offset_right = 576.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

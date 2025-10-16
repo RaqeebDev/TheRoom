@@ -34,7 +34,7 @@ func _input(event: InputEvent) -> void:
 				
 		
 		if used == false:
-			player.change("")	
+			player.change("Check the phone!")	
 			
 			if call2nd == false:
 				call2nd = true

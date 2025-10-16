@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://tyki7btrncvp"]
+[gd_scene load_steps=59 format=4 uid="uid://tyki7btrncvp"]
 
 [ext_resource type="Script" uid="uid://hq4wgyg3st1t" path="res://scripts/main.gd" id="1_wsaa6"]
 [ext_resource type="Material" uid="uid://ct0sg0auwvcf5" path="res://materials/floorreal.tres" id="2_f5nlp"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://bm5s2qlae4apr" path="res://materials/pick.tscn" id="13_rcoig"]
 [ext_resource type="PackedScene" uid="uid://qobdaormawrg" path="res://Seens/kitchen_cabinet_upper_double.tscn" id="14_jfi8r"]
 [ext_resource type="PackedScene" uid="uid://dsjiwpqcqt8er" path="res://Seens/carpet.tscn" id="16_0103b"]
+[ext_resource type="AudioStream" uid="uid://d4ity2m2wwnua" path="res://Assets/Audios/horror-bone-crack-352450.mp3" id="17_0103b"]
+[ext_resource type="PackedScene" uid="uid://bm01uhtmst85c" path="res://Seens/end.tscn" id="18_h23u5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3oi10"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -35,7 +37,9 @@ fog_light_color = Color(0.861543, 0.33887, 0.530416, 1)
 fog_light_energy = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pp7ow"]
-albedo_color = Color(0.326679, 0.326679, 0.326679, 1)
+albedo_color = Color(0.498665, 0.235194, 0.233707, 1)
+metallic = 0.71
+roughness = 0.3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lsepy"]
 resource_name = "carpetBlue"
@@ -605,10 +609,10 @@ transform = Transform3D(-4.65528e-08, 0, -0.62331, 0, 0.342645, 0, 1.065, 0, -2.
 shape = SubResource("ConvexPolygonShape3D_3oi10")
 
 [node name="player" parent="." instance=ExtResource("2_h1hhx")]
-transform = Transform3D(0.878183, 0, 0, 0, 0.878183, 0, 0, 0, 0.878183, -2.82801, 2.43369, -2.51783)
+transform = Transform3D(-0.766847, 0, 0.427962, 0, 0.878183, 0, -0.427962, 0, -0.766847, -1.28472, 2.03476, -0.920798)
 
 [node name="Tv" parent="." instance=ExtResource("3_3oi10")]
-transform = Transform3D(0.840727, 0, 0, 0, 0.840727, 0, 0, 0, 0.840727, -2.38115, 1.34521, 0.769881)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.13345, -2.38115, 1.34521, 0.769881)
 
 [node name="loungeSofa" type="StaticBody3D" parent="."]
 transform = Transform3D(0.401922, 0, 0, 0, 0.281171, 0, 0, 0, 0.370287, -0.613222, 0.457667, 3.44792)
@@ -668,7 +672,7 @@ wait_time = 3.0
 one_shot = true
 
 [node name="pick" parent="." instance=ExtResource("13_rcoig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05432, 0.801712, -1.48108)
+transform = Transform3D(0.82374, 0, -0.566967, 0, 1, 0, 0.566967, 0, 0.82374, 3.60339, 1.37997, 1.14739)
 mass = 430.672
 
 [node name="pick2" parent="." instance=ExtResource("13_rcoig")]
@@ -676,7 +680,7 @@ transform = Transform3D(0.720624, 0, 0.693326, 0, 1, 0, -0.693326, 0, 0.720624, 
 mass = 430.672
 
 [node name="pick3" parent="." instance=ExtResource("13_rcoig")]
-transform = Transform3D(0.663404, -2.49148e-10, 0.748261, -0.135461, 0.983477, 0.120099, -0.735897, -0.181034, 0.652443, 1.59103, 1.47409, -0.454817)
+transform = Transform3D(0.663404, 1.68309e-09, 0.748261, 0.375724, -0.864792, -0.333115, 0.64709, 0.50213, -0.573707, 1.54159, 1.47409, -0.671365)
 mass = 430.672
 
 [node name="upperkitchencabinet" type="Node3D" parent="."]
@@ -695,6 +699,12 @@ transform = Transform3D(-1.42505e-08, 0, 0.326013, 0, 0.326013, 0, -0.326013, 0,
 
 [node name="carpet2" parent="." instance=ExtResource("16_0103b")]
 transform = Transform3D(1.35672, 0, 0, 0, 1.35672, 0, 0, 0, 1.35672, 0.668421, 0.516349, -4.53665)
+
+[node name="bone" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_0103b")
+
+[node name="end" parent="." instance=ExtResource("18_h23u5")]
+visible = false
 
 [connection signal="timeout" from="Timer" to="player" method="_on_timer_timeout"]
 [connection signal="timeout" from="fader/Timer" to="." method="_on_timer_timeout"]

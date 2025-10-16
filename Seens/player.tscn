@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://chih3v5qwsi7q"]
+[gd_scene load_steps=14 format=3 uid="uid://chih3v5qwsi7q"]
 
 [ext_resource type="Script" uid="uid://bfycjf2h10n7" path="res://scripts/player.gd" id="1_qv6uv"]
 [ext_resource type="FontFile" uid="uid://bcnn55oh62f32" path="res://Assets/fonts/VCR_OSD_MONO_1.001.ttf" id="2_nmtxl"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bio0d04pfqsqu" path="res://Assets/Audios/breathing-fast-247449.mp3" id="5_7k26w"]
 [ext_resource type="AudioStream" uid="uid://be8m16x83kffb" path="res://Assets/Audios/empty-beer-can-table-foley-drop-1-238691.mp3" id="6_ls23l"]
 [ext_resource type="AudioStream" uid="uid://b4txlyf6m1uot" path="res://Assets/Audios/menu-change-89197.mp3" id="7_py5uh"]
+[ext_resource type="AudioStream" uid="uid://ip51oilr5vqa" path="res://Assets/Audios/scary-laugh-377526.mp3" id="8_3rpu7"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_nmtxl"]
 
@@ -124,3 +125,6 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "[E] PICK"
 label_settings = SubResource("LabelSettings_py5uh")
+
+[node name="Scary-laugh-377526" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_3rpu7")

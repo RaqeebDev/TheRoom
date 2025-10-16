@@ -13,7 +13,10 @@ config_version=5
 config/name="New Game"
 run/main_scene="uid://tyki7btrncvp"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/bg_color=Color(0.0214346, 0.0214346, 0.0214346, 1)
+boot_splash/image="uid://cm37vl2j554va"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=1000
 
 [editor_plugins]
 
