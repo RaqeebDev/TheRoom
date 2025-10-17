@@ -37,7 +37,6 @@ fog_light_color = Color(0.861543, 0.33887, 0.530416, 1)
 fog_light_energy = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pp7ow"]
-albedo_color = Color(0.498665, 0.235194, 0.233707, 1)
 metallic = 0.71
 roughness = 0.3
 
@@ -609,7 +608,7 @@ transform = Transform3D(-4.65528e-08, 0, -0.62331, 0, 0.342645, 0, 1.065, 0, -2.
 shape = SubResource("ConvexPolygonShape3D_3oi10")
 
 [node name="player" parent="." instance=ExtResource("2_h1hhx")]
-transform = Transform3D(-0.766847, 0, 0.427962, 0, 0.878183, 0, -0.427962, 0, -0.766847, -1.28472, 2.03476, -0.920798)
+transform = Transform3D(-0.766847, 0, 0.427962, 0, 0.878183, 0, -0.427962, 0, -0.766847, -1.28472, 2.03476, -2.32171)
 
 [node name="Tv" parent="." instance=ExtResource("3_3oi10")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.13345, -2.38115, 1.34521, 0.769881)
@@ -676,7 +675,7 @@ transform = Transform3D(0.82374, 0, -0.566967, 0, 1, 0, 0.566967, 0, 0.82374, 3.
 mass = 430.672
 
 [node name="pick2" parent="." instance=ExtResource("13_rcoig")]
-transform = Transform3D(0.720624, 0, 0.693326, 0, 1, 0, -0.693326, 0, 0.720624, 0.705098, 0.632551, 3.18939)
+transform = Transform3D(0.720624, 0, 0.693326, 0.0328535, 0.998877, -0.0341471, -0.692547, 0.0473854, 0.719815, 0.705098, 0.632551, 3.18939)
 mass = 430.672
 
 [node name="pick3" parent="." instance=ExtResource("13_rcoig")]
