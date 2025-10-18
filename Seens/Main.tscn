@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://tyki7btrncvp"]
+[gd_scene load_steps=60 format=4 uid="uid://tyki7btrncvp"]
 
 [ext_resource type="Script" uid="uid://hq4wgyg3st1t" path="res://scripts/main.gd" id="1_wsaa6"]
 [ext_resource type="Material" uid="uid://ct0sg0auwvcf5" path="res://materials/floorreal.tres" id="2_f5nlp"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://dsjiwpqcqt8er" path="res://Seens/carpet.tscn" id="16_0103b"]
 [ext_resource type="AudioStream" uid="uid://d4ity2m2wwnua" path="res://Assets/Audios/horror-bone-crack-352450.mp3" id="17_0103b"]
 [ext_resource type="PackedScene" uid="uid://bm01uhtmst85c" path="res://Seens/end.tscn" id="18_h23u5"]
+[ext_resource type="AudioStream" uid="uid://vfcbak2iqah" path="res://Assets/Audios/scary-halloween-horror-music-421077.mp3" id="19_pu4so"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3oi10"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -704,6 +705,10 @@ stream = ExtResource("17_0103b")
 
 [node name="end" parent="." instance=ExtResource("18_h23u5")]
 visible = false
+
+[node name="Scary-halloween-horror-music-421077" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_pu4so")
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="player" method="_on_timer_timeout"]
 [connection signal="timeout" from="fader/Timer" to="." method="_on_timer_timeout"]
